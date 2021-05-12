@@ -20,12 +20,12 @@ export class ApiService {
 
   create<Type>(url: string[], payload: {[key: string]: any}): Observable<Type>{
     const serverUrl = this.createUrl('create', url);
-    return this.http.put<Type>(serverUrl, payload);
+    return this.http.post<Type>(serverUrl, payload);
   }
 
   update<Type>(url: string[], payload: {[key: string]: any}): Observable<Type> {
     const serverUrl = this.createUrl('update', url);
-    return this.http.post<Type>(serverUrl, payload);
+    return this.http.put<Type>(serverUrl, payload);
   }
 
   delete(url: string[]): Observable<GeneralReponse> {
