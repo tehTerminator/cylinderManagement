@@ -5,6 +5,7 @@ export class User {
         public isAdmin: boolean,
         public mobile: string,
         private _token: string,
+        public designation: string,
         public expirationTime: number
     ) {}
 

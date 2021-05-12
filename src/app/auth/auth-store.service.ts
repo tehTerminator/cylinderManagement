@@ -14,7 +14,7 @@ export class AuthStoreService {
   constructor() { }
 
   generateAnonymousUser(): User {
-    return new User(0, 'Anonymous', 0, 0, false, '', '', 0);
+    return new User(0, 'Anonymous', false, '', '', '', 0);
   }
 
   get loggedIn(): boolean {
@@ -29,6 +29,7 @@ export class AuthStoreService {
       userData.is_admin,
       userData.mobile,
       userData.token,
+      userData.designation,
       expirationTime
     );
     this.user.next(newUser);

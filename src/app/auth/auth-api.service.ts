@@ -33,7 +33,7 @@ export class AuthApiService implements OnDestroy {
     return this.api.select<UserData>(['user'], { username, password }, 'POST')
       .pipe(
         tap(userData => {
-          this.store.signIn(userData);
+          this.handleAuthentication(userData);
         }),
         catchError(
           error => {
@@ -65,7 +65,8 @@ export class AuthApiService implements OnDestroy {
       created_at: '',
       updated_at: '',
       mobile: '',
-      token: ''
+      token: '',
+      designation: ''
     };
     if (!!ud) {
       userData = JSON.parse(ud) as UserData;

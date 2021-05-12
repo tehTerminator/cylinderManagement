@@ -33,6 +33,10 @@ export class CreateUserFormComponent implements OnInit {
       mobile: ['', [
         Validators.required,
         Validators.pattern('^[6-9]{1}[0-9]{9}$'),
+      ]],
+      designation: ['', [
+        Validators.required,
+        Validators.minLength(2)
       ]]
     });
   }
