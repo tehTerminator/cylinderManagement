@@ -33,20 +33,27 @@ export class CreateUserFormComponent implements OnInit {
       mobile: ['', [
         Validators.required,
         Validators.pattern('^[6-9]{1}[0-9]{9}$'),
-      ]],
-      designation_id: [0, [Validators.required, Validators.min(1)]],
-      department_id: [0, Validators.required, Validators.min(1)]
+      ]]
     });
   }
 
   onSubmit(): void {
+    if (this.myForm.invalid) {
+      this.snackBar.show('Please Enter Valid Information');
+      return;
+    }
+
+    this.loading = true;
+
     this.api.create(['user'], this.myForm.value)
     .subscribe(
       () => {
         this.snackBar.show('User Created Successfully');
         this.myForm.reset();
+        this.loading = false;
       },
       (error) => {
+        this.loading = false;
         console.error(error);
         this.snackBar.show('Unable to Create User');
       }
