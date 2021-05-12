@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SnackBarService } from '../../../../shared/snack-bar.service';
-import { WardStoreService } from './../../../../shared/ward-store.service';
+import { SnackBarService } from '../../../../../../shared/snack-bar.service';
+import { WardStoreService } from '../../../../../../shared/ward-store.service';
 
 @Component({
   selector: 'app-create-ward-form',
