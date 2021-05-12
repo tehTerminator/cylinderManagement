@@ -20,8 +20,7 @@ export class CreateWardFormComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.fb.group({
       title: ['', Validators.required],
-      bedCount: [0, [Validators.required, Validators.min(1)]],
-      bedsWithOxygen: [0, [Validators.required, Validators.min(0)]]
+      capacity: [1, [Validators.required, Validators.min(1)]],
     });
   }
 

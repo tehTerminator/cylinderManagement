@@ -1,0 +1,17 @@
+<table class="table table-bordered bg-light">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Ward Name</th>
+            <th>Capacity</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let ward of wards | async">
+            <td>{{ ward.id }}</td>
+            <td>{{ ward.title }}</td>
+            <td>{{ ward.capacity }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -9,8 +9,10 @@ export interface UserData extends BasicItem {
     is_admin: boolean;
     mobile: string;
     token: string;
+    designation: string;
 }
 
 export interface Ward extends BasicItem {
     title: string;
+    capacity: number;
 }
