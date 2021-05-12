@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserData } from '../shared/collection';
 import { User } from './user.model';
+import { HOUR } from './../shared/constants';
 
 @Injectable({
   providedIn: 'root'
