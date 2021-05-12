@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthApiService } from './auth/auth-api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cylinderManagement';
+
+  constructor(private auth: AuthApiService) {
+    this.auth.init();
+  }
 }
