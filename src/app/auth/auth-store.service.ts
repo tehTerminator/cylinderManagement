@@ -26,8 +26,6 @@ export class AuthStoreService {
     const newUser = new User(
       userData.id,
       userData.title,
-      userData.designation_id,
-      userData.department_id,
       userData.is_admin,
       userData.mobile,
       userData.token,

@@ -2,8 +2,6 @@ export class User {
     constructor(
         public id: number,
         public title: string,
-        public designationId: number,
-        public departmentId: number,
         public isAdmin: boolean,
         public mobile: string,
         private _token: string,

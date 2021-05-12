@@ -61,8 +61,6 @@ export class AuthApiService implements OnDestroy {
     let userData: UserData = {
       id: 0,
       title: 'Anonymous',
-      designation_id: 0,
-      department_id: 0,
       is_admin: false,
       created_at: '',
       updated_at: '',
