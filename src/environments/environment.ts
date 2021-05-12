@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://192.168.0.10/cylinderApi/public/'
+  apiBaseUrl: 'http://192.168.0.10/cylinderApi/public'
 };
 
 /*
