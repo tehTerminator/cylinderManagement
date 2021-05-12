@@ -13,7 +13,7 @@ export class AuthStoreService {
 
   constructor() { }
 
-  private generateAnonymousUser(): User {
+  generateAnonymousUser(): User {
     return new User(0, 'Anonymous', 0, 0, false, '', '', 0);
   }
 

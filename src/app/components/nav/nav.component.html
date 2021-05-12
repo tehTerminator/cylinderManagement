@@ -12,11 +12,35 @@
             Home
           </a>
         </li>
+        <li class="nav-item">
+          <a routerLink="/admin" routerLinkActive="active" class="nav-link" *ngIf="isAdmin()">
+            Administration
+          </a>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown" appDropdown *ngIf="isLoggedIn(); else signInMenu">
+          <a class="nav-link dropdown-toggle">
+            {{ user.title }}
+          </a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="dropdown-item">Profile</div>
+              </li>
+              <li><a (click)="signOut()" class="dropdown-item">Logout</a></li>
+            </ul>
+        </li>
+        <ng-template #signInMenu>
           <li class="nav-item">
-              <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+            <a
+              [routerLink]="['/login']"
+              routerLinkActive="active teal"
+              class="nav-link"
+            >
+              Sign In
+            </a>
           </li>
+        </ng-template>
       </ul>
     </div>
   </div>
