@@ -11,11 +11,6 @@ export interface UserData extends BasicItem {
     token: string;
 }
 
-export interface Department extends BasicItem {
+export interface Ward extends BasicItem {
     title: string;
-}
-
-export interface Designation extends BasicItem {
-    title: string;
-    department_id: number;
 }
