@@ -10,33 +10,31 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public select<Type>(url: string|string[], payload: {[key: string]: string}, method = 'GET'): Observable<Type> {
-    const serverUrl = `select/${this.createUrl(url)}`;
+  public select<Type>(url: string[], payload: {[key: string]: string}, method = 'GET'): Observable<Type> {
+    const serverUrl = this.createUrl('select', url);
     if (method === 'POST') {
       return this.http.post<Type>(serverUrl, payload);
     }
     return this.http.get<Type>(serverUrl, {params: payload});
   }
 
-  create<Type>(url: string|string[], payload: {[key: string]: any}): Observable<Type>{
-    return this.http.put<Type>(`create/${this.createUrl(url)}`, payload);
+  create<Type>(url: string[], payload: {[key: string]: any}): Observable<Type>{
+    const serverUrl = this.createUrl('create', url);
+    return this.http.put<Type>(serverUrl, payload);
   }
 
-  update<Type>(url: string|string[], payload: {[key: string]: any}): Observable<Type> {
-    return this.http.post<Type>(`update/${this.createUrl(url)}`, payload);
+  update<Type>(url: string[], payload: {[key: string]: any}): Observable<Type> {
+    const serverUrl = this.createUrl('update', url);
+    return this.http.post<Type>(serverUrl, payload);
   }
 
-  delete(url: string|string[]): Observable<GeneralReponse> {
-    return this.http.delete<GeneralReponse>(`delete/${this.createUrl(url)}`);
+  delete(url: string[]): Observable<GeneralReponse> {
+    const serverUrl = this.createUrl('delete', url);
+    return this.http.delete<GeneralReponse>(serverUrl);
   }
 
-  private createUrl(url: string | string[]): string {
-    let trail = '';
-    if (typeof(url) === 'string') {
-      trail = url;
-    } else {
-      trail = url.join('/');
-    }
+  private createUrl(prefix: string, url: string[]): string {
+    const trail = [prefix, ...url].join('/');
     return `${environment.apiBaseUrl}/${trail}`;
   }
 }
