@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public select<Type>(url: string[], payload: {[key: string]: string}, method = 'GET'): Observable<Type> {
+  public select<Type>(url: string[], payload?: {[key: string]: string}, method = 'GET'): Observable<Type> {
     const serverUrl = this.createUrl('select', url);
     if (method === 'POST') {
       return this.http.post<Type>(serverUrl, payload);
