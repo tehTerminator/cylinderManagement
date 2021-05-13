@@ -20,6 +20,7 @@ export class NavComponent implements OnInit, OnDestroy {
     this.sub = this.userStore.user.subscribe(
       (user => this.user = user)
     );
+    this.registerNavToggle();
   }
 
   ngOnDestroy(): void {
@@ -41,5 +42,14 @@ export class NavComponent implements OnInit, OnDestroy {
 
   isAdmin(): boolean {
     return this.user.isAdmin;
+  }
+
+  private registerNavToggle(): void {
+    const elements = document.querySelectorAll('.nav-item:not(.nav-item.dropdown), .dropdown-item');
+    elements.forEach(item => {
+      item.addEventListener('click', () => {
+        this.collapsed = true;
+      });
+    });
   }
 }
