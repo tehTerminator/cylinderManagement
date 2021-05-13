@@ -9,14 +9,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
-  { 
+  {
     path: 'admin',
     canActivate: [AuthGuard],
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
-  { path: 'request', loadChildren: () => import('./modules/request/request.module').then(m => m.RequestModule) },
-  { path: 'patient', loadChildren: () => import('./modules/patient/patient.module').then(m => m.PatientModule) },
-  { path: 'report', loadChildren: () => import('./modules/report/report.module').then(m => m.ReportModule) },
+  { path: 'request', canActivate: [AuthGuard], loadChildren: () => import('./modules/request/request.module').then(m => m.RequestModule) },
+  { path: 'patient', canActivate: [AuthGuard], loadChildren: () => import('./modules/patient/patient.module').then(m => m.PatientModule) },
+  { path: 'report', canActivate: [AuthGuard], loadChildren: () => import('./modules/report/report.module').then(m => m.ReportModule) },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 

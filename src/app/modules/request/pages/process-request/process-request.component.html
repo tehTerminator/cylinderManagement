@@ -12,11 +12,21 @@
         <p class="text-center">
           Current SPO2 Level - {{ oxygenRequest.spo2_level }}
         </p>
+
+        <div class="form-group">
+          <label for="cylinder">Cylinder Type</label>
+          <select class="form-select" [formControl]="cylinder">
+            <option value="" *ngFor="let item of cylinderTypes | async" [value]="item.id">
+              {{ item.title }} - {{ item.capacity }}
+            </option>
+          </select>
+        </div>
+
         <div class="btn-group w-100">
-          <button class="btn btn-success" (click)="approveRequest()">
+          <button class="btn btn-success" (click)="onSubmit('APPROVED')">
             Approve
           </button>
-          <button class="btn btn-danger" (click)="rejectRequest()">
+          <button class="btn btn-danger" (click)="onSubmit('REJECTED')">
             Reject
           </button>
         </div>

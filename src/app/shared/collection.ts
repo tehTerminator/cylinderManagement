@@ -40,4 +40,11 @@ export interface OxygenRequest extends BasicItem {
     comment: string;
     patient: Patient;
     ward: Ward;
+    cylinder_id: number;
+    cylinder?: Cylinder;
+}
+
+export interface Cylinder extends BasicItem {
+    title: string;
+    capacity: number;
 }

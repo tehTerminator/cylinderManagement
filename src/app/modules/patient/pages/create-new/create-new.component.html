@@ -1,58 +1,172 @@
 <div class="row justify-content-center">
   <div class="col-lg-4 col-md-6">
-    <div class="card" [ngClass]="loading?'loading':''">
-        <div class="card-header">Create New Patient</div>
-        <form class="card-body" [formGroup]="myForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="title">Patients Name</label>
-            <input type="text" class="form-control" formControlName="title" />
-          </div>
-          <div class="form-group">
-            <label for="father">Father / Husband</label>
-            <input type="text" class="form-control" formControlName="father" />
-          </div>
-          <div class="form-group">
-            <label for="age">Age</label>
-            <input type="number" class="form-control" formControlName="age" />
-          </div>
-          <div class="form-group">
-            <label for="mobile">Mobile Number</label>
-            <input type="text" class="form-control" formControlName="mobile" />
-          </div>
-          <div class="form-group">
-              <label for="spo2_level">SPO2 Level</label>
-              <input type="number" min="0" max="100" step="1" class="form-control" formControlName="spo2_level" />
-            </div>
-    
-          <div class="form-group">
-            <label for="bed_number">Bed Number</label>
-            <input type="number" min="0" step="1" class="form-control" formControlName="bed_number" />
-          </div>
-          <div class="form-check">
-            <label for="has_oxygen_line">Has Oxygen Line</label>
-            <input
-              type="checkbox"
-              class="form-check-input"
-              formControlName="has_oxygen_line"
-            />
-          </div>
-          <div class="form-group">
-            <label for="ward_id">Ward ID</label>
-            <select name="ward_id" class="form-select" formControlName="ward_id">
-              <option value="" *ngFor="let ward of wards | async" [value]="ward.id">
-                {{ ward.title }}
-              </option>
-            </select>
-          </div>
-    
-          <div class="form-group">
-              <label for="narration">Narration</label>
-              <input type="text" class="form-control" formControlName="narration" />
-            </div>
-    
-          <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
-        </form>
-      </div>
-    
+    <div class="card" [ngClass]="loading ? 'loading' : ''">
+      <div class="card-header">Create New Patient</div>
+      <form class="card-body" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="title">Patients Name</label>
+          <input type="text" class="form-control" formControlName="title" />
+          <small
+            class="help-text"
+            *ngIf="title.invalid && (title.touched || title.dirty)"
+          >
+            <span class="text-danger" *ngIf="title.hasError('required')">
+              Please Enter Full Name.
+            </span>
+            <span class="text-danger" *ngIf="title.hasError('minlength')">
+              Atleast 3 Characters Are Required.
+            </span>
+            <span class="text-danger" *ngIf="title.hasError('pattern')">
+              Only Alphabets Are Allowed.
+            </span>
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="father">Father / Husband</label>
+          <input type="text" class="form-control" formControlName="father" />
+          <small
+            class="help-text"
+            *ngIf="father.invalid && (father.touched || father.dirty)"
+          >
+            <span class="text-danger" *ngIf="father.hasError('required')">
+              Please Enter Relatives Name.
+            </span>
+            <span class="text-danger" *ngIf="father.hasError('minlength')">
+              Atleast 3 Characters Are Required.
+            </span>
+            <span class="text-danger" *ngIf="father.hasError('pattern')">
+              Only Alphabets Are Allowed.
+            </span>
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" formControlName="age" />
+          <small
+            class="help-text"
+            *ngIf="age.invalid && (age.touched || age.dirty)"
+          >
+            <span class="text-danger" *ngIf="age.hasError('required')">
+              Please Enter Age.
+            </span>
+            <span class="text-danger" *ngIf="age.hasError('min')">
+              Must Be Greater than 0.
+            </span>
+            <span class="text-danger" *ngIf="age.hasError('max')">
+              Cannot Be more than 150.
+            </span>
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input type="text" class="form-control" formControlName="mobile" />
+          <small
+            class="help-text"
+            *ngIf="mobile.invalid && (mobile.touched || mobile.dirty)"
+          >
+            <span class="text-danger" *ngIf="mobile.hasError('required')">
+              Please Enter Mobile.
+            </span>
+            <span class="text-danger" *ngIf="mobile.hasError('pattern')">
+              Invalid Mobile Number.
+            </span>
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="spo2_level">SPO2 Level</label>
+          <input
+            type="number"
+            min="0"
+            max="100"
+            step="1"
+            class="form-control"
+            formControlName="spo2_level"
+          />
+          <small
+            class="help-text"
+            *ngIf="
+              spo2_level.invalid && (spo2_level.touched || spo2_level.dirty)
+            "
+          >
+            <span class="text-danger" *ngIf="spo2_level.hasError('required')">
+              Please Enter SPO2_LEVEL.
+            </span>
+            <span class="text-danger" *ngIf="spo2_level.hasError('min')">
+              Must Be Greater than 0.
+            </span>
+            <span class="text-danger" *ngIf="spo2_level.hasError('max')">
+              Cannot Be more than 100.
+            </span>
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="ward_id">Ward ID</label>
+          <select name="ward_id" class="form-select" formControlName="ward_id">
+            <option
+              value=""
+              *ngFor="let ward of wards | async"
+              [value]="ward.id"
+            >
+              {{ ward.title }}
+            </option>
+          </select>
+          <small
+            class="help-text"
+            *ngIf="
+              ward_id.invalid && (ward_id.touched || ward_id.dirty)
+            "
+          >
+            <span class="text-danger" *ngIf="ward_id.hasError('required')">
+              Please Select A Ward.
+            </span>
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="bed_number">Bed Number</label>
+          <input
+            type="number"
+            min="0"
+            step="1"
+            class="form-control"
+            formControlName="bed_number"
+          />
+          <small
+            class="help-text"
+            *ngIf="
+              bed_number.invalid && (bed_number.touched || bed_number.dirty)
+            "
+          >
+            <span class="text-danger" *ngIf="bed_number.hasError('required')">
+              Please Enter a Bed Number
+            </span>
+            <span class="text-danger" *ngIf="bed_number.hasError('pattern')">
+              Invalid Characters.
+            </span>
+            <span class="text-danger" *ngIf="bed_number.hasError('occupied')">
+              Bed is Already Occupied.
+            </span>
+            <span class="text-danger" *ngIf="bed_number.hasError('selectward')">
+              Please Select a Ward First.
+            </span>
+          </small>
+        </div>
+        <div class="form-check">
+          <label for="has_oxygen_line">Has Oxygen Line</label>
+          <input
+            type="checkbox"
+            class="form-check-input"
+            formControlName="has_oxygen_line"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="narration">Comment</label>
+          <input type="text" class="form-control" formControlName="narration" />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+      </form>
+    </div>
   </div>
 </div>

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin.component';
-import { CreateUserFormComponent } from './components/create-user-form/create-user-form.component';
+import { CreateUserFormComponent } from './pages/create-user-form/create-user-form.component';
 
 const routes: Routes = [
-  { path: '', component: AdminComponent },
   { path: 'create-user', component: CreateUserFormComponent },
-  { path: 'ward', loadChildren: () => import('./pages/ward/ward.module').then(m => m.WardModule) }
+  { path: 'ward', loadChildren: () => import('./pages/ward/ward.module').then(m => m.WardModule) },
+  { path: 'cylinder', loadChildren: () => import('./pages/cylinder/cylinder.module').then(m => m.CylinderModule) }
 ];
 
 @NgModule({

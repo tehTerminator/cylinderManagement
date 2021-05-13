@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { ApiService } from './../../../../shared/api.service';
-import { SnackBarService } from './../../../../shared/snack-bar.service';
+import { ApiService } from '../../../../shared/api.service';
+import { SnackBarService } from '../../../../shared/snack-bar.service';
 
 @Component({
   selector: 'app-create-user-form',

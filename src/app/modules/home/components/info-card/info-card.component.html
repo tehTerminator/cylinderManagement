@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="loading ? 'loading' : ''">
     <div class="card-body">
         <span class="fs-1 d-block text-center mb-3">{{ stat }}</span>
         <span class="fs-4 d-block text-center">{{ title }}</span>

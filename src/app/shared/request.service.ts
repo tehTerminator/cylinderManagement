@@ -40,7 +40,7 @@ export class RequestService {
     return this.api.select<OxygenRequest[]>([...this.url, 'patient', id.toString()]);
   }
 
-  public changeState(id: number, state: string): Observable<OxygenRequest> {
-    return this.api.update<OxygenRequest>(this.url, {id, state});
+  public changeState(id: number, state: string, cylinderId: number): Observable<OxygenRequest> {
+    return this.api.update<OxygenRequest>(this.url, {id, state, cylinderId});
   }
 }

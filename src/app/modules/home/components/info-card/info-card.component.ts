@@ -11,6 +11,7 @@ export class InfoCardComponent implements OnChanges {
   @Input() title = 'Title';
   @Input() url = [''];
   stat = 0;
+  loading = true;
 
   constructor(private api: ApiService) { }
 
@@ -31,7 +32,11 @@ export class InfoCardComponent implements OnChanges {
     this.api.select<{value: number}>(this.url)
     .pipe(retry(3))
     .subscribe(
-      (data => this.stat = data.value),
+      (data => {
+        this.stat = data.value;
+        this.loading = false;
+      }),
+      () => this.loading = false
     );
   }
 

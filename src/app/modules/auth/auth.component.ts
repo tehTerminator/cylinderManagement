@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
   signInForm: FormGroup = new FormGroup({});
+  loading = false;
 
   constructor(
     private fb: FormBuilder,
@@ -32,12 +33,16 @@ export class AuthComponent implements OnInit {
       return;
     }
 
+    this.loading = true;
+
     this.auth.signIn(this.username.value, this.password.value)
     .subscribe(
       () => {
+        this.loading = false;
         this.router.navigate(['/home']);
       },
       (error) => {
+        this.loading = false;
         this.snackBar.show(error);
       }
     );

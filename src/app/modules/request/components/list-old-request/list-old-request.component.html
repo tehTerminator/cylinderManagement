@@ -5,6 +5,9 @@
             <span>SPO2 level {{ item.spo2_level }}</span>
             <span [ngClass]="getTextColor(item)">{{ item.state }}</span>
         </div>
+        <span *ngIf="item.cylinder" class="text-center d-block">
+            Cylinder Type - {{ item.cylinder.title }}@{{ item.cylinder.capacity }}
+        </span>
     </li>
 </ul>
 
