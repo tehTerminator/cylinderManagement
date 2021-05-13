@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RequestComponent } from './request.component';
 import { NewRequestComponent } from './pages/new-request/new-request.component';
 import { ProcessRequestComponent } from './pages/process-request/process-request.component';
 

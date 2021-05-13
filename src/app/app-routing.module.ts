@@ -15,6 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
   { path: 'request', loadChildren: () => import('./modules/request/request.module').then(m => m.RequestModule) },
+  { path: 'patient', loadChildren: () => import('./modules/patient/patient.module').then(m => m.PatientModule) },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 

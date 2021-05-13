@@ -12,6 +12,29 @@
             Home
           </a>
         </li>
+        <li class="nav-item dropdown" appDropdown>
+          <a class="nav-link dropdown-toggle"> Patient </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLink]="['/patient', 'create']" class="dropdown-item"
+                >Create New</a
+              >
+            </li>
+            <li>
+              <a [routerLink]="['/patient', 'list']" class="dropdown-item"
+                >View Patient</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/request/create"
+            routerLinkActive="active"
+            class="nav-link"
+            >Create New Request</a
+          >
+        </li>
         <li class="nav-item dropdown" appDropdown *ngIf="isAdmin()">
           <a class="nav-link dropdown-toggle"> Administration </a>
           <ul class="dropdown-menu">

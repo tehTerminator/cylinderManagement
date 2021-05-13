@@ -28,4 +28,5 @@ export interface Patient extends BasicItem {
     has_oxygen_line: boolean;
     ward_id: number;
     ward: Ward;
+    spo2_level: number;
 }
