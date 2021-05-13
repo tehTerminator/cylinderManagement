@@ -1,6 +1,10 @@
 <div class="row g-3">
   <div class="col-md-4">
-    <div class="card" *ngIf="oxygenRequest; else noRequest">
+    <div
+      class="card"
+      *ngIf="oxygenRequest; else noRequest"
+      [ngClass]="loading ? 'loading' : ''"
+    >
       <div class="card-header">
         {{ oxygenRequest.patient.title }}
       </div>
@@ -29,7 +33,5 @@
 </div>
 
 <ng-template #noRequest>
-    <div class="card card-body">
-        Invalid Request
-    </div>
+  <div class="card card-body">Invalid Request</div>
 </ng-template>

@@ -11,6 +11,7 @@ import { SnackBarService } from '../../../../shared/snack-bar.service';
 })
 export class ViewPatientComponent implements OnInit {
   patient: Patient | null = null;
+  loading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,7 +41,16 @@ export class ViewPatientComponent implements OnInit {
   }
 
   discharge(): void {
+    this.loading = true;
     if (!!this.patient) {
+      const confirmMessage = 'Do You Want to Discharge ' + this.patient.title;
+      const reallyDelete = confirm(confirmMessage);
+
+      if (!reallyDelete) {
+        this.loading = false;
+        return;
+      }
+
       this.patientStore.discharge(this.patient.id)
       .subscribe(
         (() => {
@@ -48,6 +58,7 @@ export class ViewPatientComponent implements OnInit {
           this.router.navigate(['/patient', 'list']);
         }),
         (() => {
+          this.loading = false;
           this.snackBar.show('Unable to Discharge Patient');
         })
       );

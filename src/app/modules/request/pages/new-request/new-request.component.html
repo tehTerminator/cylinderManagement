@@ -1,26 +1,36 @@
 <div class="row g-3">
-    <div class="col-md-4">
-        <app-patient-table [patient]="patient"></app-patient-table>
-    </div>
-    <div class="col-md-4">
-        <form [formGroup]="myForm" class="card card-body" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-              <label for="spo2_level">Current SPO2 Level</label>
-              <input
-                type="number"
-                name="spo2_level"
-                class="form-control"
-                formControlName="spo2_level"
-              />
-            </div>
-            <div class="form-group">
-              <label for="comment">Comment</label>
-              <input type="text" class="form-control" name="comment" formControlName="comment">
-            </div>
-            <button type="submit" class="btn btn-primary mt-3 w-100">Submit</button>
-          </form>
-    </div>
-    <div class="col-md-4">
-        <app-list-old-request [requests]="oldRequests"></app-list-old-request>
-    </div>
+  <div class="col-md-4">
+    <app-patient-table [patient]="patient"></app-patient-table>
+  </div>
+  <div class="col-md-4">
+    <form
+      [formGroup]="myForm"
+      class="card card-body"
+      (ngSubmit)="onSubmit()"
+      [ngClass]="loading ? 'loading' : ''"
+    >
+      <div class="form-group">
+        <label for="spo2_level">Current SPO2 Level</label>
+        <input
+          type="number"
+          name="spo2_level"
+          class="form-control"
+          formControlName="spo2_level"
+        />
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <input
+          type="text"
+          class="form-control"
+          name="comment"
+          formControlName="comment"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mt-3 w-100">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <app-list-old-request [requests]="oldRequests"></app-list-old-request>
+  </div>
 </div>

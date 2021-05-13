@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ApiService } from './../../../../shared/api.service';
 import { SnackBarService } from './../../../../shared/snack-bar.service';
 
@@ -27,8 +27,10 @@ export class CreateUserFormComponent implements OnInit {
       username: ['',
         [
           Validators.required,
-          Validators.maxLength(50)
-        ]],
+          Validators.maxLength(50),
+        ],
+        this.usernameValidator.bind(this)
+      ],
       password: ['', Validators.required],
       mobile: ['', [
         Validators.required,
@@ -36,7 +38,8 @@ export class CreateUserFormComponent implements OnInit {
       ]],
       designation: ['', [
         Validators.required,
-        Validators.minLength(2)
+        Validators.minLength(2),
+        Validators.pattern('^[a-zA-Z ]+$')
       ]]
     });
   }
@@ -64,4 +67,65 @@ export class CreateUserFormComponent implements OnInit {
     );
   }
 
+  generateUserName(): void{
+    const name = this.title.value;
+    const username = name.replace(/ /g, '').toLowerCase() + this.genRandomNumber(1000);
+    this.myForm.patchValue({
+      username
+    });
+  }
+
+  generatePassword(): void {
+    let password = this.username.value as string;
+    password = password.substr(0, 3) + '@' + this.genRandomNumber(1000);
+    password = password[0].toUpperCase() + password.substr(1);
+    this.myForm.patchValue({
+      password
+    });
+  }
+
+  genRandomNumber(len: number): number {
+    return Math.floor(Math.random() * len);
+  }
+
+  get title(): FormControl {
+    return this.myForm.get('title') as FormControl;
+  }
+
+  get username(): FormControl {
+    return this.myForm.get('username') as FormControl;
+  }
+
+  get password(): FormControl {
+    return this.myForm.get('password') as FormControl;
+  }
+
+  get mobile(): FormControl {
+    return this.myForm.get('mobile') as FormControl;
+  }
+
+  get designation(): FormControl {
+    return this.myForm.get('designation') as FormControl;
+  }
+
+
+  private usernameValidator(control: FormControl): Promise<ValidationErrors | null> {
+    const promise = new Promise<ValidationErrors | null>((resolve, reject) => {
+      const username = control.value;
+      this.api.select<{ count: number }>(['username'], { username })
+        .subscribe(
+          (response) => {
+            if (response.count > 0) {
+              const error: ValidationErrors = { duplicate: true };
+              resolve(error);
+            }
+            resolve(null);
+          },
+          (error) => {
+            resolve(null);
+          }
+        );
+    });
+    return promise;
+  }
 }

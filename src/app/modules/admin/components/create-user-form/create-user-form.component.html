@@ -1,30 +1,77 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <form class="card">
+    <form class="card" [ngClass]="loading ? 'loading' : ''">
       <div class="card-header">Create New User</div>
       <form class="card-body" [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="title">Full Name</label
-          ><input type="text" class="form-control" formControlName="title" />
+          <label for="title">Full Name</label>
+          <input type="text" class="form-control" formControlName="title" (blur)="generateUserName()" />
+          <small class="help-text" *ngIf="title.invalid && (title.touched || title.dirty)">
+            <span class="text-danger" *ngIf="title.hasError('required')">
+              Please Enter Full Name
+            </span>
+            <span class="text-danger" *ngIf="title.hasError('maxlength')">
+              Maximum 100 Characters Allowed
+            </span>
+          </small>
         </div>
         <div class="form-group">
-          <label for="username">Username</label
-          ><input type="text" class="form-control" formControlName="username" />
+          <label for="username">Username</label>
+          <input type="text" class="form-control" formControlName="username" (blur)="generatePassword()" />
+          <small class="help-text" *ngIf="username.invalid && (username.touched || username.dirty)">
+            <span class="text-danger" *ngIf="username.hasError('required')">
+              Please Enter Username
+            </span>
+            <span class="text-danger" *ngIf="username.hasError('maxlength')">
+              Maximum 50 Characters Allowed.
+            </span>
+            <span class="text-danger" *ngIf="username.hasError('duplicate')">
+              Username Not Available.
+            </span>
+          </small>
         </div>
         <div class="form-group">
-          <label for="password">Password</label
-          ><input type="text" class="form-control" formControlName="password" />
+          <label for="password">Password</label>
+          <input type="text" class="form-control" formControlName="password" />
+          <small class="help-text" *ngIf="password.invalid && (password.touched || password.dirty)">
+            <span class="text-danger" *ngIf="password.hasError('required')">
+              Please Provide a Password
+            </span>
+          </small>
         </div>
         <div class="form-group">
-          <label for="mobile">Mobile Number</label
-          ><input type="text" class="form-control" formControlName="mobile" />
+          <label for="mobile">Mobile Number</label>
+          <input type="text" class="form-control" formControlName="mobile" />
+          <small class="help-text" *ngIf="mobile.invalid && (mobile.touched || mobile.dirty)">
+            <span class="text-danger" *ngIf="mobile.hasError('required')">
+              Please Provide a Mobile.
+            </span>
+            <span class="text-danger" *ngIf="mobile.hasError('pattern')">
+              Invalid Mobile Number.
+            </span>
+          </small>
         </div>
         <div class="form-group">
-          <label for="designation">Designation</label
-          ><input type="text" class="form-control" formControlName="designation" />
+          <label for="designation">Designation</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="designation"
+          />
+          <small class="help-text" *ngIf="designation.invalid && (designation.touched || designation.dirty)">
+            <span class="text-danger" *ngIf="designation.hasError('required')">
+              Please Provide a Designation.
+            </span>
+            <span class="text-danger" *ngIf="designation.hasError('minlength')">
+              Please Enter Atleast 2 Characters
+            </span>
+            <span class="text-danger" *ngIf="designation.hasError('pattern')">
+              Only Alphabets Allowed
+            </span>
+          </small>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3 w-100">Submit</button>
+        <button type="submit" class="btn btn-primary mt-3 w-100" [disabled]="myForm.invalid">Submit</button>
       </form>
     </form>
   </div>

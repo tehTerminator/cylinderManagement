@@ -14,6 +14,7 @@ export class ProcessRequestComponent implements OnInit {
   oxygenRequest: OxygenRequest | null = null;
   patient: Patient | null = null;
   previousRequests: OxygenRequest[] = [];
+  loading = false;
 
   constructor(
     private reqService: RequestService,
@@ -50,12 +51,14 @@ export class ProcessRequestComponent implements OnInit {
   }
 
   approveRequest(): void {
+    this.loading = true;
     this.reqService.changeState(this.id, 'APPROVED')
       .subscribe(
-        () => this.navigateToList(),
+        () => {this.navigateToList(); this.loading = false; },
         error => {
           this.snackBar.show('Unable to Approve Request');
           console.error(error);
+          this.loading = false;
         }
       );
   }
@@ -63,10 +66,11 @@ export class ProcessRequestComponent implements OnInit {
   rejectRequest(): void {
     this.reqService.changeState(this.id, 'REJECTED')
       .subscribe(
-        () => this.navigateToList(),
+        () => {this.navigateToList(); this.loading = false; },
         error => {
           this.snackBar.show('Unable to Reject Request');
           console.error(error);
+          this.loading = false;
         }
       );
   }
