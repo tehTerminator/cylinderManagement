@@ -1,0 +1,134 @@
+# Details
+
+Date : 2021-05-14 00:05:09
+
+Directory c:\projects\cylinderManagement\src\app
+
+Total : 119 files,  2991 codes, 28 comments, 494 blanks, all 3513 lines
+
+[summary](results.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [app/app-routing.module.ts](/app/app-routing.module.ts) | TypeScript | 25 | 0 | 3 | 28 |
+| [app/app.component.html](/app/app.component.html) | HTML | 12 | 0 | 1 | 13 |
+| [app/app.component.scss](/app/app.component.scss) | SCSS | 6 | 0 | 1 | 7 |
+| [app/app.component.spec.ts](/app/app.component.spec.ts) | TypeScript | 31 | 0 | 5 | 36 |
+| [app/app.component.ts](/app/app.component.ts) | TypeScript | 13 | 0 | 3 | 16 |
+| [app/app.module.ts](/app/app.module.ts) | TypeScript | 33 | 0 | 3 | 36 |
+| [app/auth/auth-api.service.ts](/app/auth/auth-api.service.ts) | TypeScript | 95 | 0 | 13 | 108 |
+| [app/auth/auth-store.service.ts](/app/auth/auth-store.service.ts) | TypeScript | 37 | 0 | 7 | 44 |
+| [app/auth/auth.guard.ts](/app/auth/auth.guard.ts) | TypeScript | 18 | 0 | 5 | 23 |
+| [app/auth/auth.interceptor.ts](/app/auth/auth.interceptor.ts) | TypeScript | 22 | 0 | 4 | 26 |
+| [app/auth/user.model.ts](/app/auth/user.model.ts) | TypeScript | 18 | 0 | 3 | 21 |
+| [app/components/nav/dropdown.directive.ts](/app/components/nav/dropdown.directive.ts) | TypeScript | 17 | 0 | 6 | 23 |
+| [app/components/nav/nav.component.html](/app/components/nav/nav.component.html) | HTML | 92 | 18 | 3 | 113 |
+| [app/components/nav/nav.component.scss](/app/components/nav/nav.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/components/nav/nav.component.ts](/app/components/nav/nav.component.ts) | TypeScript | 46 | 0 | 10 | 56 |
+| [app/modules/admin/admin-routing.module.ts](/app/modules/admin/admin-routing.module.ts) | TypeScript | 13 | 0 | 3 | 16 |
+| [app/modules/admin/admin.module.ts](/app/modules/admin/admin.module.ts) | TypeScript | 16 | 0 | 4 | 20 |
+| [app/modules/admin/pages/create-user-form/create-user-form.component.html](/app/modules/admin/pages/create-user-form/create-user-form.component.html) | HTML | 77 | 0 | 2 | 79 |
+| [app/modules/admin/pages/create-user-form/create-user-form.component.scss](/app/modules/admin/pages/create-user-form/create-user-form.component.scss) | SCSS | 3 | 0 | 0 | 3 |
+| [app/modules/admin/pages/create-user-form/create-user-form.component.spec.ts](/app/modules/admin/pages/create-user-form/create-user-form.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/admin/pages/create-user-form/create-user-form.component.ts](/app/modules/admin/pages/create-user-form/create-user-form.component.ts) | TypeScript | 115 | 0 | 17 | 132 |
+| [app/modules/admin/pages/cylinder/components/form/form.component.html](/app/modules/admin/pages/cylinder/components/form/form.component.html) | HTML | 36 | 0 | 1 | 37 |
+| [app/modules/admin/pages/cylinder/components/form/form.component.scss](/app/modules/admin/pages/cylinder/components/form/form.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/admin/pages/cylinder/components/form/form.component.ts](/app/modules/admin/pages/cylinder/components/form/form.component.ts) | TypeScript | 58 | 0 | 10 | 68 |
+| [app/modules/admin/pages/cylinder/components/list/list.component.html](/app/modules/admin/pages/cylinder/components/list/list.component.html) | HTML | 5 | 0 | 0 | 5 |
+| [app/modules/admin/pages/cylinder/components/list/list.component.scss](/app/modules/admin/pages/cylinder/components/list/list.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/admin/pages/cylinder/components/list/list.component.ts](/app/modules/admin/pages/cylinder/components/list/list.component.ts) | TypeScript | 18 | 0 | 7 | 25 |
+| [app/modules/admin/pages/cylinder/cylinder-routing.module.ts](/app/modules/admin/pages/cylinder/cylinder-routing.module.ts) | TypeScript | 9 | 0 | 3 | 12 |
+| [app/modules/admin/pages/cylinder/cylinder.component.html](/app/modules/admin/pages/cylinder/cylinder.component.html) | HTML | 8 | 0 | 0 | 8 |
+| [app/modules/admin/pages/cylinder/cylinder.component.scss](/app/modules/admin/pages/cylinder/cylinder.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/admin/pages/cylinder/cylinder.component.spec.ts](/app/modules/admin/pages/cylinder/cylinder.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/admin/pages/cylinder/cylinder.component.ts](/app/modules/admin/pages/cylinder/cylinder.component.ts) | TypeScript | 11 | 0 | 5 | 16 |
+| [app/modules/admin/pages/cylinder/cylinder.module.ts](/app/modules/admin/pages/cylinder/cylinder.module.ts) | TypeScript | 20 | 0 | 4 | 24 |
+| [app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.html](/app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.html) | HTML | 36 | 0 | 1 | 37 |
+| [app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.scss](/app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.spec.ts](/app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.ts](/app/modules/admin/pages/ward/components/create-ward-form/create-ward-form.component.ts) | TypeScript | 57 | 0 | 10 | 67 |
+| [app/modules/admin/pages/ward/components/ward-list/ward-list.component.html](/app/modules/admin/pages/ward/components/ward-list/ward-list.component.html) | HTML | 16 | 0 | 1 | 17 |
+| [app/modules/admin/pages/ward/components/ward-list/ward-list.component.scss](/app/modules/admin/pages/ward/components/ward-list/ward-list.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/admin/pages/ward/components/ward-list/ward-list.component.spec.ts](/app/modules/admin/pages/ward/components/ward-list/ward-list.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/admin/pages/ward/components/ward-list/ward-list.component.ts](/app/modules/admin/pages/ward/components/ward-list/ward-list.component.ts) | TypeScript | 18 | 0 | 5 | 23 |
+| [app/modules/admin/pages/ward/ward-routing.module.ts](/app/modules/admin/pages/ward/ward-routing.module.ts) | TypeScript | 9 | 0 | 3 | 12 |
+| [app/modules/admin/pages/ward/ward.component.html](/app/modules/admin/pages/ward/ward.component.html) | HTML | 8 | 0 | 0 | 8 |
+| [app/modules/admin/pages/ward/ward.component.scss](/app/modules/admin/pages/ward/ward.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/admin/pages/ward/ward.component.spec.ts](/app/modules/admin/pages/ward/ward.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/admin/pages/ward/ward.component.ts](/app/modules/admin/pages/ward/ward.component.ts) | TypeScript | 11 | 0 | 5 | 16 |
+| [app/modules/admin/pages/ward/ward.module.ts](/app/modules/admin/pages/ward/ward.module.ts) | TypeScript | 20 | 0 | 4 | 24 |
+| [app/modules/auth/auth-routing.module.ts](/app/modules/auth/auth-routing.module.ts) | TypeScript | 9 | 0 | 3 | 12 |
+| [app/modules/auth/auth.component.html](/app/modules/auth/auth.component.html) | HTML | 28 | 0 | 2 | 30 |
+| [app/modules/auth/auth.component.scss](/app/modules/auth/auth.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/auth/auth.component.ts](/app/modules/auth/auth.component.ts) | TypeScript | 50 | 0 | 9 | 59 |
+| [app/modules/auth/auth.module.ts](/app/modules/auth/auth.module.ts) | TypeScript | 16 | 0 | 4 | 20 |
+| [app/modules/home/components/info-card/info-card.component.html](/app/modules/home/components/info-card/info-card.component.html) | HTML | 6 | 0 | 0 | 6 |
+| [app/modules/home/components/info-card/info-card.component.scss](/app/modules/home/components/info-card/info-card.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/home/components/info-card/info-card.component.spec.ts](/app/modules/home/components/info-card/info-card.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/home/components/info-card/info-card.component.ts](/app/modules/home/components/info-card/info-card.component.ts) | TypeScript | 37 | 0 | 7 | 44 |
+| [app/modules/home/home-routing.module.ts](/app/modules/home/home-routing.module.ts) | TypeScript | 9 | 0 | 3 | 12 |
+| [app/modules/home/home.component.html](/app/modules/home/home.component.html) | HTML | 5 | 0 | 0 | 5 |
+| [app/modules/home/home.component.scss](/app/modules/home/home.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/home/home.component.spec.ts](/app/modules/home/home.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/home/home.component.ts](/app/modules/home/home.component.ts) | TypeScript | 25 | 0 | 5 | 30 |
+| [app/modules/home/home.module.ts](/app/modules/home/home.module.ts) | TypeScript | 16 | 0 | 4 | 20 |
+| [app/modules/patient/pages/create-new/create-new.component.html](/app/modules/patient/pages/create-new/create-new.component.html) | HTML | 169 | 0 | 4 | 173 |
+| [app/modules/patient/pages/create-new/create-new.component.scss](/app/modules/patient/pages/create-new/create-new.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/patient/pages/create-new/create-new.component.spec.ts](/app/modules/patient/pages/create-new/create-new.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/patient/pages/create-new/create-new.component.ts](/app/modules/patient/pages/create-new/create-new.component.ts) | TypeScript | 154 | 0 | 10 | 164 |
+| [app/modules/patient/pages/list-patient/list-patient.component.html](/app/modules/patient/pages/list-patient/list-patient.component.html) | HTML | 22 | 0 | 1 | 23 |
+| [app/modules/patient/pages/list-patient/list-patient.component.scss](/app/modules/patient/pages/list-patient/list-patient.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/patient/pages/list-patient/list-patient.component.spec.ts](/app/modules/patient/pages/list-patient/list-patient.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/patient/pages/list-patient/list-patient.component.ts](/app/modules/patient/pages/list-patient/list-patient.component.ts) | TypeScript | 19 | 0 | 5 | 24 |
+| [app/modules/patient/pages/view-patient/view-patient.component.html](/app/modules/patient/pages/view-patient/view-patient.component.html) | HTML | 6 | 0 | 1 | 7 |
+| [app/modules/patient/pages/view-patient/view-patient.component.scss](/app/modules/patient/pages/view-patient/view-patient.component.scss) | SCSS | 3 | 0 | 0 | 3 |
+| [app/modules/patient/pages/view-patient/view-patient.component.spec.ts](/app/modules/patient/pages/view-patient/view-patient.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/patient/pages/view-patient/view-patient.component.ts](/app/modules/patient/pages/view-patient/view-patient.component.ts) | TypeScript | 58 | 0 | 10 | 68 |
+| [app/modules/patient/patient-routing.module.ts](/app/modules/patient/patient-routing.module.ts) | TypeScript | 16 | 0 | 3 | 19 |
+| [app/modules/patient/patient.module.ts](/app/modules/patient/patient.module.ts) | TypeScript | 23 | 0 | 4 | 27 |
+| [app/modules/report/report-routing.module.ts](/app/modules/report/report-routing.module.ts) | TypeScript | 9 | 0 | 3 | 12 |
+| [app/modules/report/report.component.html](/app/modules/report/report.component.html) | HTML | 1 | 0 | 1 | 2 |
+| [app/modules/report/report.component.scss](/app/modules/report/report.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/report/report.component.spec.ts](/app/modules/report/report.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/report/report.component.ts](/app/modules/report/report.component.ts) | TypeScript | 11 | 0 | 5 | 16 |
+| [app/modules/report/report.module.ts](/app/modules/report/report.module.ts) | TypeScript | 14 | 0 | 4 | 18 |
+| [app/modules/request/components/list-old-request/list-old-request.component.html](/app/modules/request/components/list-old-request/list-old-request.component.html) | HTML | 19 | 0 | 1 | 20 |
+| [app/modules/request/components/list-old-request/list-old-request.component.scss](/app/modules/request/components/list-old-request/list-old-request.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/request/components/list-old-request/list-old-request.component.spec.ts](/app/modules/request/components/list-old-request/list-old-request.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/request/components/list-old-request/list-old-request.component.ts](/app/modules/request/components/list-old-request/list-old-request.component.ts) | TypeScript | 27 | 0 | 5 | 32 |
+| [app/modules/request/pages/list-patient/list-patient.component.html](/app/modules/request/pages/list-patient/list-patient.component.html) | HTML | 22 | 0 | 1 | 23 |
+| [app/modules/request/pages/list-patient/list-patient.component.scss](/app/modules/request/pages/list-patient/list-patient.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/request/pages/list-patient/list-patient.component.spec.ts](/app/modules/request/pages/list-patient/list-patient.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/request/pages/list-patient/list-patient.component.ts](/app/modules/request/pages/list-patient/list-patient.component.ts) | TypeScript | 19 | 0 | 5 | 24 |
+| [app/modules/request/pages/list-requests/list-requests.component.html](/app/modules/request/pages/list-requests/list-requests.component.html) | HTML | 26 | 0 | 3 | 29 |
+| [app/modules/request/pages/list-requests/list-requests.component.scss](/app/modules/request/pages/list-requests/list-requests.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/request/pages/list-requests/list-requests.component.spec.ts](/app/modules/request/pages/list-requests/list-requests.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/request/pages/list-requests/list-requests.component.ts](/app/modules/request/pages/list-requests/list-requests.component.ts) | TypeScript | 29 | 0 | 6 | 35 |
+| [app/modules/request/pages/new-request/new-request.component.html](/app/modules/request/pages/new-request/new-request.component.html) | HTML | 36 | 0 | 1 | 37 |
+| [app/modules/request/pages/new-request/new-request.component.scss](/app/modules/request/pages/new-request/new-request.component.scss) | SCSS | 3 | 0 | 1 | 4 |
+| [app/modules/request/pages/new-request/new-request.component.spec.ts](/app/modules/request/pages/new-request/new-request.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/request/pages/new-request/new-request.component.ts](/app/modules/request/pages/new-request/new-request.component.ts) | TypeScript | 78 | 0 | 10 | 88 |
+| [app/modules/request/pages/process-request/process-request.component.html](/app/modules/request/pages/process-request/process-request.component.html) | HTML | 43 | 0 | 5 | 48 |
+| [app/modules/request/pages/process-request/process-request.component.scss](/app/modules/request/pages/process-request/process-request.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/modules/request/pages/process-request/process-request.component.spec.ts](/app/modules/request/pages/process-request/process-request.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/modules/request/pages/process-request/process-request.component.ts](/app/modules/request/pages/process-request/process-request.component.ts) | TypeScript | 91 | 0 | 15 | 106 |
+| [app/modules/request/request-routing.module.ts](/app/modules/request/request-routing.module.ts) | TypeScript | 18 | 0 | 3 | 21 |
+| [app/modules/request/request.module.ts](/app/modules/request/request.module.ts) | TypeScript | 27 | 0 | 4 | 31 |
+| [app/shared/api.service.ts](/app/shared/api.service.ts) | TypeScript | 49 | 0 | 11 | 60 |
+| [app/shared/base-service.ts](/app/shared/base-service.ts) | TypeScript | 86 | 0 | 16 | 102 |
+| [app/shared/collection.ts](/app/shared/collection.ts) | TypeScript | 45 | 0 | 6 | 51 |
+| [app/shared/constants.ts](/app/shared/constants.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [app/shared/cylinder.service.ts](/app/shared/cylinder.service.ts) | TypeScript | 41 | 0 | 4 | 45 |
+| [app/shared/patient-store.service.ts](/app/shared/patient-store.service.ts) | TypeScript | 69 | 0 | 7 | 76 |
+| [app/shared/request.service.ts](/app/shared/request.service.ts) | TypeScript | 28 | 10 | 9 | 47 |
+| [app/shared/snack-bar.service.ts](/app/shared/snack-bar.service.ts) | TypeScript | 11 | 0 | 4 | 15 |
+| [app/shared/utilities/components/patient-table/patient-table.component.html](/app/shared/utilities/components/patient-table/patient-table.component.html) | HTML | 55 | 0 | 1 | 56 |
+| [app/shared/utilities/components/patient-table/patient-table.component.scss](/app/shared/utilities/components/patient-table/patient-table.component.scss) | SCSS | 0 | 0 | 1 | 1 |
+| [app/shared/utilities/components/patient-table/patient-table.component.spec.ts](/app/shared/utilities/components/patient-table/patient-table.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [app/shared/utilities/components/patient-table/patient-table.component.ts](/app/shared/utilities/components/patient-table/patient-table.component.ts) | TypeScript | 17 | 0 | 5 | 22 |
+| [app/shared/utilities/search.pipe.ts](/app/shared/utilities/search.pipe.ts) | TypeScript | 15 | 0 | 2 | 17 |
+| [app/shared/utilities/utilities.module.ts](/app/shared/utilities/utilities.module.ts) | TypeScript | 15 | 0 | 4 | 19 |
+| [app/shared/ward-store.service.ts](/app/shared/ward-store.service.ts) | TypeScript | 44 | 0 | 4 | 48 |
+
+[summary](results.md)

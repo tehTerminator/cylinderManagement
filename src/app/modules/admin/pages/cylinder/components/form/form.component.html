@@ -1,12 +1,12 @@
 <form class="card" [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <div class="card-header">Create New Ward</div>
+    <div class="card-header">Create New Cylinder Type</div>
     <div class="card-body">
       <div class="form-group">
-        <label for="title">Ward Name</label>
+        <label for="title">Cylinder Name Name</label>
         <input type="text" class="form-control" formControlName="title" />
         <small class="help-text" *ngIf="title.invalid && (title.touched || title.dirty)">
           <span class="text-danger" *ngIf="title.hasError('required')">
-            Please Enter Ward Name
+            Please Enter Cylinder Name
           </span>
           <span class="text-danger" *ngIf="title.hasError('duplicate')">
             Name Already Exists
@@ -14,7 +14,7 @@
         </small>
       </div>
       <div class="form-group">
-        <label for="bedCount">Capacity</label
+        <label for="capacity">Capacity</label
         ><input
           type="number"
           min="1"
@@ -27,7 +27,7 @@
             Please Enter Capacity.
           </span>
           <span class="text-danger" *ngIf="capacity.hasError('min')">
-            Atleast 1 Bed is Required
+            Atleast 1 is Required.
           </span>
         </small>
       </div>
