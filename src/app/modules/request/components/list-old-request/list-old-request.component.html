@@ -1,0 +1,17 @@
+<ul class="list-group" *ngIf="requests.length > 0; else empty">
+    <li class="list-group-item" *ngFor="let item of requests">
+        <span class="w-100 d-block">Created On : {{ item.created_at | date:'dd-MMM-y'}}</span>
+        <div class="flex-row justify-content-between">
+            <span>SPO2 level {{ item.spo2_level }}</span>
+            <span>{{ item.state }}</span>
+        </div>
+    </li>
+</ul>
+
+<ng-template #empty>
+    <div class="card">
+        <div class="card-body">
+            No Previous Request Available
+        </div>
+    </div>
+</ng-template>

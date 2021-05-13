@@ -1,0 +1,56 @@
+<table class="table table-bordered bg-light" *ngIf="!!patient; else invalidPatient">
+    <tbody>
+        <tr>
+            <th scope="row">Patient No.</th>
+            <td>{{ patient.id }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Name</th>
+            <td>{{ patient.title }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Father/Husband</th>
+            <td>{{ patient.father }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Age</th>
+            <td>{{ patient.age }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Initial SPO2 Level</th>
+            <td>{{ patient.spo2_level }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Bed</th>
+            <td>{{ patient.ward.title }} #{{ patient.bed_number }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Contact Number</th>
+            <td>{{ patient.mobile }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Oxygen Line</th>
+            <td>{{ patient.has_oxygen_line ? 'YES' : 'NO' }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Discharged</th>
+            <td>{{ patient.date_of_discharge ? 'YES' : 'NO' }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Date of Admission</th>
+            <td>{{ patient.created_at | date:'dd-MMM-y hh:mm a' }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Comment</th>
+            <td>{{ patient.narration }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #invalidPatient>
+    <div class="card">
+        <div class="card-body">
+            Invalid Patient Information
+        </div>
+    </div>
+</ng-template>

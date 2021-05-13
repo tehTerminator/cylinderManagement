@@ -1,1 +1,21 @@
-<p>New Request Works</p>
+<div class="row">
+    <div class="col-md-4">
+        <app-patient-table [patient]="patient"></app-patient-table>
+    </div>
+    <div class="col-md-4">
+        <form [formGroup]="myForm" class="card card-body mt-3" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <input
+                type="number"
+                name="spo2_level"
+                class="form-control"
+                formControlName="spo2_level"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary mt-3 w-100">Submit</button>
+          </form>
+    </div>
+    <div class="col-md-4">
+        <app-list-old-request [requests]="oldRequests"></app-list-old-request>
+    </div>
+</div>

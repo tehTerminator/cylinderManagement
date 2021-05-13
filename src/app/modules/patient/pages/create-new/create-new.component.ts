@@ -19,7 +19,7 @@ export class CreateNewComponent implements OnInit {
     private formBuilder: FormBuilder,
     private snackBar: SnackBarService,
     private patientStore: PatientStoreService,
-    private wardStore: WardStoreService
+    private wardStore: WardStoreService,
   ) { }
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class CreateNewComponent implements OnInit {
         Validators.required,
         Validators.pattern('^[0-9]+$')]
       ],
-      has_oxygen_line: ['', Validators.required],
+      has_oxygen_line: false,
       ward_id: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       spo2_level: [0, [Validators.required, Validators.min(0), Validators.max(100)]]
     });

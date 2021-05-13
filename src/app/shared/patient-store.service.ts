@@ -35,7 +35,10 @@ export class PatientStoreService extends BaseService {
         catchError(
           error => {
             console.error(error);
-            throw new Error('Unable to Create New Patient');
+            if (typeof(error.error) === 'string'){
+              throw new Error(error.error);
+            }
+            throw new Error('Unable to Create New Patient, Please Check Log');
           }
         )
       );

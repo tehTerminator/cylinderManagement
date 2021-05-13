@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="loading?'loading':''">
     <div class="card-header">Create New Patient</div>
     <form class="card-body" [formGroup]="myForm" (ngSubmit)="onSubmit()">
       <div class="form-group">

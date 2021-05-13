@@ -30,3 +30,12 @@ export interface Patient extends BasicItem {
     ward: Ward;
     spo2_level: number;
 }
+
+export interface OxygenRequest extends BasicItem {
+    patient_id: number;
+    ward_id: number;
+    bed_number: number;
+    spo2_level: number;
+    state: string;
+    comment: string;
+}

@@ -7,7 +7,7 @@ import { ViewPatientComponent } from './pages/view-patient/view-patient.componen
 const routes: Routes = [
   { path: 'create', component: CreateNewComponent },
   { path: 'list', component: ListPatientComponent },
-  { path: 'view', component: ViewPatientComponent },
+  { path: 'view/:id', component: ViewPatientComponent },
   { path: '**', redirectTo: 'create', pathMatch: 'full' }
 ];
 
