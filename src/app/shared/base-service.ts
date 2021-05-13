@@ -69,7 +69,9 @@ export abstract class BaseService {
     }
 
     protected deleteItem(index: number): void {
-        this.data.next(this.data.value.splice(index, 1));
+        const list = this.data.value;
+        list.splice(index, 1);
+        this.data.next(list);
         this.updateTimeStamp();
     }
 

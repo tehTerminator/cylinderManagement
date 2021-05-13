@@ -16,14 +16,14 @@
           <a class="nav-link dropdown-toggle"> Patient </a>
           <ul class="dropdown-menu">
             <li>
-              <a [routerLink]="['/patient', 'create']" class="dropdown-item"
-                >Create New</a
-              >
+              <a [routerLink]="['/patient', 'create']" class="dropdown-item">
+                Create New
+              </a>
             </li>
             <li>
-              <a [routerLink]="['/patient', 'list']" class="dropdown-item"
-                >View Patient</a
-              >
+              <a [routerLink]="['/patient', 'list']" class="dropdown-item">
+                View Patient
+              </a>
             </li>
           </ul>
         </li>
@@ -31,30 +31,45 @@
           <a class="nav-link dropdown-toggle"> Request </a>
           <ul class="dropdown-menu">
             <li>
-              <a [routerLink]="['/request', 'patient']" class="dropdown-item"
-                >Request New Cylinder</a
-              >
+              <a [routerLink]="['/request', 'patient']" class="dropdown-item">
+                Request New Cylinder
+              </a>
             </li>
             <li>
-              <a [routerLink]="['/request', 'list']" class="dropdown-item"
-                >View Pending Request</a
-              >
+              <a [routerLink]="['/request', 'list']" class="dropdown-item">
+                View Pending Request
+              </a>
             </li>
           </ul>
         </li>
+        <!-- <li class="nav-item dropdown" appDropdown>
+          <a class="nav-link dropdown-toggle"> Report </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLink]="['/request', 'patient']" class="dropdown-item">
+                Approved Requests
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/request', 'list']" class="dropdown-item">
+                Patients Report
+              </a>
+            </li>
+          </ul>
+        </li> -->
 
         <li class="nav-item dropdown" appDropdown *ngIf="isAdmin()">
           <a class="nav-link dropdown-toggle"> Administration </a>
           <ul class="dropdown-menu">
             <li>
-              <a [routerLink]="['/admin', 'create-user']" class="dropdown-item"
-                >Create New User</a
-              >
+              <a [routerLink]="['/admin', 'create-user']" class="dropdown-item">
+                Create New User
+              </a>
             </li>
             <li>
-              <a [routerLink]="['/admin', 'ward']" class="dropdown-item"
-                >Create New Ward</a
-              >
+              <a [routerLink]="['/admin', 'ward']" class="dropdown-item">
+                Create New Ward
+              </a>
             </li>
           </ul>
         </li>

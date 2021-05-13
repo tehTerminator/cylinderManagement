@@ -35,8 +35,8 @@ export class CreateNewComponent implements OnInit {
         Validators.max(150),
         Validators.pattern('^[0-9]+$')]
       ],
-      mobile: ['', Validators.required],
-      narration: ['', Validators.required],
+      mobile: ['', [Validators.required, Validators.pattern('^[6-9]{1}[0-9]{9}$')]],
+      narration: '',
       bed_number: ['', [
         Validators.required,
         Validators.pattern('^[0-9]+$')]

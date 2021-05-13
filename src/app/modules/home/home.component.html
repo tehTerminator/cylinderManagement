@@ -1,1 +1,5 @@
-<p>home works!</p>
+<div class="row g-3">
+    <div class="col-lg-3 col-md-4" *ngFor="let item of statsToDisplay">
+        <app-info-card [title]="item.title" [url]="item.url"></app-info-card>
+    </div>
+</div>

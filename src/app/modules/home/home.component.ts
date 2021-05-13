@@ -6,6 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  statsToDisplay = [
+    {
+      title: 'Total Patients Admitted Today',
+      url : ['patients', 'admittedToday']
+    },
+    {
+      title: 'Total Patients Discharged Today',
+      url: ['patients', 'dischargedToday']
+    },
+    {
+      title: 'Total Cylinders Disbursed',
+      url: ['oxygen_request', 'approvedToday']
+    }
+  ];
 
   constructor() { }
 

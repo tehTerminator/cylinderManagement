@@ -39,4 +39,18 @@ export class ViewPatientComponent implements OnInit {
     }
   }
 
+  discharge(): void {
+    if (!!this.patient) {
+      this.patientStore.discharge(this.patient.id)
+      .subscribe(
+        (() => {
+          this.snackBar.show('Patient Discharged Successfully');
+          this.router.navigate(['/patient', 'list']);
+        }),
+        (() => {
+          this.snackBar.show('Unable to Discharge Patient');
+        })
+      );
+    }
+  }
 }

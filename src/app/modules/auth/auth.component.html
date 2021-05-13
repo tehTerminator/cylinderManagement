@@ -8,7 +8,7 @@
                 <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input class="form-control" type="text" name="username" formControlName="username">
+                        <input class="form-control" type="text" name="username" formControlName="username"  autocomplete="username">
                         <small *ngIf="username.invalid && (username.dirty || username.touched)">
                             <span class="text-danger" *ngIf="username.hasError('required')">Please Enter Username</span>
                         </small>
@@ -16,7 +16,7 @@
 
                     <div class="form-group mt-3">
                         <label for="password">Password</label>
-                        <input class="form-control" type="password" name="password" formControlName="password">
+                        <input class="form-control" type="password" name="password" formControlName="password" autocomplete="current-password">
                         <small *ngIf="password.invalid && (password.dirty || password.touched)">
                             <span class="text-danger" *ngIf="password.hasError('required')">Please Enter Password</span>
                         </small>

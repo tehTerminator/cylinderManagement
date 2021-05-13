@@ -43,7 +43,7 @@ export class PatientStoreService extends BaseService {
         )
       );
   }
-  public update(payload: Patient): Observable<BasicItem> {
+  public update(payload: any): Observable<Patient> {
     return this.api.update<Patient>(['patient'], payload)
       .pipe(
         tap(patient => this.updateItem(patient)),
@@ -53,6 +53,21 @@ export class PatientStoreService extends BaseService {
         })
       );
   }
+
+  public discharge(id: number): Observable<Patient> {
+    const list = this.getAsList();
+    const index = list.findIndex(x => x.id === id);
+    console.log(index);
+    return this.api.update<Patient>(['patient', 'discharge'], {id})
+    .pipe(
+      tap(patient => this.deleteItem(index)),
+      catchError(error => {
+        console.error(error);
+        throw new Error('Unable to Update Patient Information');
+      })
+    );
+  }
+
   public delete(id: number): Observable<any> {
     throw new Error('Method not implemented.');
   }
