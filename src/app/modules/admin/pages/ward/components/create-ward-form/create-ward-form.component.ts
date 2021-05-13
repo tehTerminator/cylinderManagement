@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Form, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Ward } from '../../../../../../shared/collection';
 import { SnackBarService } from '../../../../../../shared/snack-bar.service';
 import { WardStoreService } from '../../../../../../shared/ward-store.service';
 
@@ -19,7 +20,7 @@ export class CreateWardFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      title: ['', Validators.required],
+      title: ['', Validators.required, this.wardNameValidator.bind(this)],
       capacity: [1, [Validators.required, Validators.min(1)]],
     });
   }
@@ -40,6 +41,26 @@ export class CreateWardFormComponent implements OnInit {
       },
       (error) => this.snackBar.show(error)
     );
+  }
+
+  private wardNameValidator(control: FormControl): Promise<ValidationErrors | null> {
+    const promise = new Promise<ValidationErrors | null>((resolve, reject) => {
+      const title = (control.value as string).toLowerCase();
+      const list = this.store.getAsList() as Ward[];
+      const item = list.find( x => x.title.toLowerCase() === title );
+      if (!!item) {
+        const error: ValidationErrors = { duplicate: true };
+        resolve(error);
+      }
+    });
+    return promise;
+  }
+
+  get title(): FormControl {
+    return this.myForm.get('title') as FormControl;
+  }
+  get capacity(): FormControl {
+    return this.myForm.get('capacity') as FormControl;
   }
 
 }
