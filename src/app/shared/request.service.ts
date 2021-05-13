@@ -10,6 +10,7 @@ import { OxygenRequest } from './collection';
 export class RequestService {
 
   private url = ['oxygen_request'];
+  selectedReq: OxygenRequest | null = null;
 
   constructor(private api: ApiService) { }
 
@@ -18,7 +19,7 @@ export class RequestService {
   }
 
   /**
-   * 
+   *
    * @param id Request ID
    * @returns Observable<OxygenRequest>
    */
@@ -31,11 +32,15 @@ export class RequestService {
   }
 
   /**
-   * 
-   * @param id Patient Id 
+   *
+   * @param id Patient Id
    * @returns Observable<OxygenRequest[]> for Provided Patient id
    */
   public fetchForPatient(id: number): Observable<OxygenRequest[]> {
     return this.api.select<OxygenRequest[]>([...this.url, 'patient', id.toString()]);
+  }
+
+  public changeState(id: number, state: string): Observable<OxygenRequest> {
+    return this.api.update<OxygenRequest>(this.url, {id, state});
   }
 }

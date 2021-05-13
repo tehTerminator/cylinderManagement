@@ -13,10 +13,8 @@ export class ApiService {
 
   public select<Type>(url: string[], payload?: { [key: string]: string }, method = 'GET'): Observable<Type> {
     const serverUrl = this.createUrl('select', url);
-    console.log('Select Method ', method);
     let request: any = null;
     if (method === 'POST') {
-      console.log('Post SELECT');
       request = this.http.post<Type>(serverUrl, payload);
     } else {
       request = this.http.get<Type>(serverUrl, { params: payload });

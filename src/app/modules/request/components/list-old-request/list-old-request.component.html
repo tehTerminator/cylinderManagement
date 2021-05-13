@@ -1,9 +1,9 @@
 <ul class="list-group" *ngIf="requests.length > 0; else empty">
     <li class="list-group-item" *ngFor="let item of requests">
-        <span class="w-100 d-block">Created On : {{ item.created_at | date:'dd-MMM-y'}}</span>
-        <div class="flex-row justify-content-between">
+        <span class="w-100 d-block text-center">Created On : {{ item.created_at | date:'dd-MMM-y hh:mm a'}}</span>
+        <div class="d-flex justify-content-between">
             <span>SPO2 level {{ item.spo2_level }}</span>
-            <span>{{ item.state }}</span>
+            <span [ngClass]="getTextColor(item)">{{ item.state }}</span>
         </div>
     </li>
 </ul>

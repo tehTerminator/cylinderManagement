@@ -38,4 +38,6 @@ export interface OxygenRequest extends BasicItem {
     spo2_level: number;
     state: string;
     comment: string;
+    patient: Patient;
+    ward: Ward;
 }

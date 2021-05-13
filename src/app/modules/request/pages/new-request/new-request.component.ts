@@ -79,7 +79,6 @@ export class NewRequestComponent implements OnInit {
             'Request Created Successfully. #' + oxygenRequest.id
           );
           this.oldRequests.unshift(oxygenRequest);
-          this.myForm.reset();
           this.loading = false;
         },
         (error) => { this.snackBar.show(error); this.loading = false; }

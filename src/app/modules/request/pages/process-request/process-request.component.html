@@ -1,1 +1,35 @@
-<p>process-request works!</p>
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card" *ngIf="oxygenRequest; else noRequest">
+      <div class="card-header">
+        {{ oxygenRequest.patient.title }}
+      </div>
+      <div class="card-body">
+        <p class="text-center">
+          Current SPO2 Level - {{ oxygenRequest.spo2_level }}
+        </p>
+        <div class="btn-group w-100">
+          <button class="btn btn-success" (click)="approveRequest()">
+            Approve
+          </button>
+          <button class="btn btn-danger" (click)="rejectRequest()">
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <app-list-old-request [requests]="previousRequests"></app-list-old-request>
+  </div>
+  <div class="col-md-4">
+    <app-patient-table [patient]="patient"></app-patient-table>
+  </div>
+</div>
+
+<ng-template #noRequest>
+    <div class="card card-body">
+        Invalid Request
+    </div>
+</ng-template>

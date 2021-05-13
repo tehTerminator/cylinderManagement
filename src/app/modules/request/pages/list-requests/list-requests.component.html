@@ -1,1 +1,29 @@
-<p>list-requests works!</p>
+
+    <h1 class="fs-1 text-light text-center">Pending Request For Cylinders</h1>
+
+<table class="table table-bordered text-center bg-light mt-3" *ngIf="requests.length > 0; else noData">
+    <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Ward</th>
+            <th>SPO2 Level</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let req of requests" style="cursor: pointer;" (click)="onSelect(req)">
+            <td>{{ req.patient.title }}</td>
+            <td>{{ req.ward.title }} # {{ req.bed_number }}</td>
+            <td>{{ req.spo2_level }}</td>
+            <td>{{ req.created_at | date:'dd-MMM-y hh:mm a' }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #noData>
+    <div class="card">
+        <div class="card-body">
+            No Pending Requests
+        </div>
+    </div>
+</ng-template>

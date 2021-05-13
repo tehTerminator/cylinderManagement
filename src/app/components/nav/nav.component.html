@@ -27,14 +27,22 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a
-            routerLink="/request/create"
-            routerLinkActive="active"
-            class="nav-link"
-            >Create New Request</a
-          >
+        <li class="nav-item dropdown" appDropdown>
+          <a class="nav-link dropdown-toggle"> Request </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLink]="['/request', 'patient']" class="dropdown-item"
+                >Request New Cylinder</a
+              >
+            </li>
+            <li>
+              <a [routerLink]="['/request', 'list']" class="dropdown-item"
+                >View Pending Request</a
+              >
+            </li>
+          </ul>
         </li>
+
         <li class="nav-item dropdown" appDropdown *ngIf="isAdmin()">
           <a class="nav-link dropdown-toggle"> Administration </a>
           <ul class="dropdown-menu">

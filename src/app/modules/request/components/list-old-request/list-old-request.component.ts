@@ -17,4 +17,15 @@ export class ListOldRequestComponent implements OnChanges {
       this.requests = change.currentValue as OxygenRequest[];
     }
   }
+
+  getTextColor(req: OxygenRequest): string {
+    switch (req.state) {
+      case 'ACTIVE':
+        return 'text-primary';
+      case 'ACCEPTED':
+        return 'text-success';
+      default:
+        return 'text-danger';
+    }
+  }
 }

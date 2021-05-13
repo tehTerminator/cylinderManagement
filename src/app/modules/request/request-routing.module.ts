@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'patient', component: ListPatientComponent },
   { path: 'patient/:id/new', component: NewRequestComponent },
   { path: 'list', component: ListRequestsComponent },
-  { path: ':id', component: ProcessRequestComponent },
+  { path: 'process', component: ProcessRequestComponent },
   { path: '**', redirectTo: 'new', pathMatch: 'full' }
 ];
 
