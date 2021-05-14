@@ -6,24 +6,21 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #1e3c72; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2a5298,
+    #1e3c72
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2a5298,
+    #1e3c72
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .ng-invalid.ng-touched {
   border-color: red;
-}
-
-body {
-  background: #396afc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2948ff,
-    #396afc
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2948ff,
-    #396afc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .loading {
@@ -64,7 +61,6 @@ body {
     z-index: 101;
   }
 }
-
 
 .form-group {
   margin-bottom: 10px;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from '../../../../shared/api.service';
 import { SnackBarService } from '../../../../shared/snack-bar.service';
 
@@ -15,7 +16,8 @@ export class CreateUserFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
-    private snackBar: SnackBarService
+    private snackBar: SnackBarService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -56,8 +58,12 @@ export class CreateUserFormComponent implements OnInit {
     .subscribe(
       () => {
         this.snackBar.show('User Created Successfully');
-        this.myForm.reset();
-        this.loading = false;
+        const payload = {
+          title: this.title.value,
+          username: this.username.value,
+          password: this.password.value
+        };
+        this.router.navigate(['/admin', 'preview'], {queryParams: payload});
       },
       (error) => {
         this.loading = false;

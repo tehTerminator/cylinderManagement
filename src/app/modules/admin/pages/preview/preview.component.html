@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-dark text-light">
+                User Created Successfully
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Name</th>
+                            <td>{{ displayName }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Username</th>
+                            <td>{{ username }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Password</th>
+                            <td>{{ password }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="text-danger mt-3 text-center">
+                    Please Store Your Credentials Safely.
+                </p>
+
+                <a routerLink="/admin/create-user" class="btn btn-success w-100 d-block">Okay</a>
+            </div>
+        </div>
+    </div>
+</div>
